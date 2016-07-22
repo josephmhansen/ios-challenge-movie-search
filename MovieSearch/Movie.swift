@@ -20,14 +20,14 @@ struct Movie {
     let summary: String
     let poster: String
     
-    init?(jsonDictionary: [String: AnyObject]) {
-        guard let name = jsonDictionary[kTitle] as? String else {return nil}
+    init?(dictionary: [String: AnyObject]) {
+        guard let name = dictionary[kTitle] as? String else {return nil}
         
-        guard let rating = jsonDictionary[kRating] as? Float else {return nil}
+        guard let rating = dictionary[kRating] as? Float else {return nil}
         
-        guard let summary = jsonDictionary[kSummary] as? String else {return nil}
+        guard let summary = dictionary[kSummary] as? String else {return nil}
         
-        guard let poster = jsonDictionary[kPoster] as? String else {return nil}
+        guard let poster = dictionary[kPoster] as? String else {return nil}
         
         self.name = name
         self.rating = rating
