@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Movie {
     private let kTitle = "original_title"
@@ -18,7 +19,7 @@ struct Movie {
     let name: String
     let rating: Float
     let summary: String
-    let poster: String
+    let poster: UIImage
     
     init?(dictionary: [String: AnyObject]) {
         guard let name = dictionary[kTitle] as? String else {return nil}
@@ -27,7 +28,7 @@ struct Movie {
         
         guard let summary = dictionary[kSummary] as? String else {return nil}
         
-        guard let poster = dictionary[kPoster] as? String else {return nil}
+        guard let poster = dictionary[kPoster] as? UIImage else {return nil}
         
         self.name = name
         self.rating = rating
