@@ -19,6 +19,7 @@ class MovieController{
             completion(movies: [])
             return
         }
+        
         let urlParameters = ["api_key" : "\(apiKey)", "query":"\(searchTerm)"]
         
         NetworkController.performRequestForURL(url, httpMethod: .Get, urlParameters: urlParameters, body: nil) { (data, error) in
@@ -43,6 +44,7 @@ class MovieController{
                     movies.append(movie)
                 }
             }
+            
             completion(movies: movies)
             return
             
